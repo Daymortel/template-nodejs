@@ -14,8 +14,8 @@ app.use(cors());
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-app.use('/contact', require('./src/routes/contact.route'));
-app.use('/upload', require('./src/routes/upload.route'));
-app.use('/', require('./src/routes/view.route'));
+app.use('/contact', require('../routes/contact.route'));
+app.use('/upload', require('../routes/upload.route'));
+app.use('/', require('../routes/view.route'));
 
 app.listen(port, () => console.log(`Server connected to port ${port}`));
