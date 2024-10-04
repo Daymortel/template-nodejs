@@ -1,9 +1,11 @@
-require('dotenv').config();
-const express = require('express');
-const router = express.Router();
+import express from 'express';
 
-router.get('/', async (req, res) => {
-    res.render('index')
-});
+export const viewRoute = () => {
+    const router = express.Router();
 
-module.exports = router;
+    router.get('/', (req, res) => {
+        res.render('index')
+    });
+
+    return router;
+}

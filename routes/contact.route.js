@@ -1,11 +1,13 @@
-require('dotenv').config();
-const express = require('express');
-const { send } = require('../controllers/contact.controller');
-const router = express.Router();
+import express from 'express';
+import { send } from '../controllers/contact.controller.js';
 
-router.use(express.json());
-router.use(express.urlencoded({ extended: true }));
+export const contactRoute = () => {
+    const router = express.Router();
 
-router.post('/', send);
+    router.use(express.json());
+    router.use(express.urlencoded({ extended: true }));
 
-module.exports = router;
+    router.post('/', send);
+
+    return router;
+}

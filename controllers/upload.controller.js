@@ -1,4 +1,4 @@
-exports.send = async (req, res) => {
+export const send = (req, res) => {
     try {
         console.log(req.files);
         if (!req.files) {

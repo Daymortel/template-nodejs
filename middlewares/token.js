@@ -1,6 +1,6 @@
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 
-module.exports = (req, res, next) => {
+export const tokenMid = (req, res, next) => {
     const token = req.cookies["token"];
   
     if (!token) {

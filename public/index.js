@@ -1,8 +1,12 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const cookieParser = require('cookie-parser');
-const methodOverride = require('method-override');
+import 'dotenv/config';
+import express from 'express';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
+import methodOverride from 'method-override';
+import { contactRoute } from '../routes/contact.route.js';
+import { uploadRoute } from '../routes/upload.route.js';
+import { viewRoute } from '../routes/view.route.js';
+
 const app = express();
 const port = process.env.PORT;
 
@@ -14,8 +18,8 @@ app.use(cors());
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-app.use('/contact', require('../routes/contact.route'));
-app.use('/upload', require('../routes/upload.route'));
-app.use('/', require('../routes/view.route'));
+app.use('/contact', contactRoute());
+app.use('/upload', uploadRoute());
+app.use('/', viewRoute());
 
 app.listen(port, () => console.log(`Server connected to port ${port}`));

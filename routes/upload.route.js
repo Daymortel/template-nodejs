@@ -1,17 +1,20 @@
-const express = require('express');
-const fileUpload = require('express-fileupload');
-const { send } = require('../controllers/upload.controller');
-const router = express.Router();
+import express from 'express';
+import fileUpload from 'express-fileupload';
+import { send } from '../controllers/upload.controller.js';
 
-router.use(express.json());
-router.use(express.urlencoded({ extended: true }));
+export const uploadRoute = () => {
+    const router = express.Router();
 
-router.use(
-    fileUpload({
-        createParentPath: true
-    })
-)
+    router.use(express.json());
+    router.use(express.urlencoded({ extended: true }));
 
-router.post('/', send);
+    router.use(
+        fileUpload({
+            createParentPath: true
+        })
+    )
 
-module.exports = router;
+    router.post('/', send);
+
+    return router;
+}

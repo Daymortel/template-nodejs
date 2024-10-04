@@ -1,6 +1,6 @@
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
-exports.send = async (req, res) => {
+export const send = async (req, res) => {
     let transporter = nodemailer.createTransport({
         host: "grannus.o2switch.net",
         port: 465,
