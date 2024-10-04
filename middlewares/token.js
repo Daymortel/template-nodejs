@@ -1,10 +1,10 @@
 import jwt from 'jsonwebtoken';
 
-export const tokenMid = (req, res, next) => {
+export const token = (req, res, next) => {
     const token = req.cookies["token"];
   
     if (!token) {
-      return res.redirect('/login');
+      return res.redirect('auth/signin');
     }
     try {
       const decodedToken = jwt.verify(token, "secretkey");

@@ -1,0 +1,26 @@
+<%- include ('../includes/header.ejs') %>
+<main>
+    <h1>My WebSite - Signup</h1>
+    <form action="/user/register" method="post">
+        <div>
+            <label for="email">Email</label>
+            <br />
+            <input type="email" name="email" id="email" required>
+        </div>
+        <br />
+        <div>
+            <label for="username">Username</label>
+            <br />
+            <input type="text" name="username" id="username" required>
+        </div>
+        <br />
+        <div>
+            <label for="password">Password</label>
+            <br />
+            <input type="password" name="password" id="password" required>
+        </div>
+        <br />
+        <button type="submit" class="button" id="register">Signup</button>
+    </form>
+</main>
+<%- include ('../includes/footer.ejs') %>

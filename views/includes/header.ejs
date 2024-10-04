@@ -7,5 +7,14 @@
 </head>
 <body>
     <header>
-        
+        <a href="/">Home</a>
+        <% if (typeof token !== 'undefined') { %>
+            <a href="/auth/profil">Profil</a>
+            <form action="/user/logout" method="post">
+                <button type="submit">Signout</button>
+            </form>
+        <% } else { %>
+            <a href="/auth/signup">Signup</a>
+            <a href="/auth/signin">Signin</a>
+        <% } %>
     </header>

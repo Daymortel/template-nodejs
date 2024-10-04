@@ -18,9 +18,8 @@ export const send = async (req, res) => {
             html: `<p>My message.</p>
                 `
         });
-        res.send("<script>alert('Message envoyé avec succès !'); window.location.href = '/';</script>");
+        res.status(200).send("<script>alert('Message envoyé avec succès !'); window.location.href = '/';</script>");
     } catch (err) {
-        console.log(err.message);
         res.send("<script>alert('Erreur lors de l'envoie du message !'); window.location.href = '/';</script>");
     }
 }

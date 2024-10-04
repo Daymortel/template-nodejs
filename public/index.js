@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import methodOverride from 'method-override';
 import { contactRoute } from '../routes/contact.route.js';
 import { uploadRoute } from '../routes/upload.route.js';
+import { userRoute } from '../routes/user.route.js';
 import { viewRoute } from '../routes/view.route.js';
 
 const app = express();
@@ -20,6 +21,7 @@ app.set('view engine', 'ejs');
 
 app.use('/contact', contactRoute());
 app.use('/upload', uploadRoute());
+app.use('/user', userRoute());
 app.use('/', viewRoute());
 
 app.listen(port, () => console.log(`Server connected to port ${port}`));

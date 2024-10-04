@@ -6,10 +6,9 @@ export const send = (req, res) => {
         } else {
             const file = req.files.image;
             file.mv('./public/imgs/' + file.name);
-            res.send(file);
+            res.status(200).send(file);
         }
     } catch (err) {
         res.send(err.message);
-        console.log(err.message);
     }
 }
