@@ -3,10 +3,8 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import methodOverride from 'method-override';
-import { contactRoute } from '../routes/contact.route.js';
-import { uploadRoute } from '../routes/upload.route.js';
-import { userRoute } from '../routes/user.route.js';
-import { viewRoute } from '../routes/view.route.js';
+import { UserRoute } from '../routes/UserRoutes';
+import { ViewRoute } from '../routes/ViewRoutes';
 
 const app = express();
 const port = process.env.PORT;
@@ -19,9 +17,7 @@ app.use(cors());
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-app.use('/contact', contactRoute());
-app.use('/upload', uploadRoute());
-app.use('/user', userRoute());
-app.use('/', viewRoute());
+app.use('/user', new UserRoute().router);
+app.use('/', new ViewRoute().router);
 
 app.listen(port, () => console.log(`Server connected to port ${port}`));

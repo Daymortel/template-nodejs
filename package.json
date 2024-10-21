@@ -4,13 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node public/index.js",
-    "dev": "nodemon public/index.js"
+    "start": "ts-node public/index.ts",
+    "dev": "nodemon public/index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/express-fileupload": "^1.5.1",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/method-override": "^0.0.35",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.7.7",
+    "@types/nodemailer": "^6.4.16",
+    "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
@@ -21,13 +32,16 @@
     "jsonwebtoken": "^9.0.2",
     "mariadb": "^3.3.2",
     "method-override": "^3.0.0",
-    "mysql2": "^3.11.3",
+    "multer": "^1.4.5-lts.1",
     "node-mailer": "^0.1.1",
-    "pg": "^8.11.3",
-    "sequelize": "^6.33.0"
+    "ts-node": "^10.9.2",
+    "typeorm": "^0.3.20",
+    "typescript": "^5.6.3"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
-  "type": "module"
+  "ts-node": {
+    "esm": true
+  }
 }
